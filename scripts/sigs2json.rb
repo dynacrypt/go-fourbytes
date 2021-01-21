@@ -20,8 +20,8 @@ Dir["#{dir}/signatures/????????"].each do |f|
   funcs = File.read(f).strip.split(';').map { |s| s.strip } - [ '' ]
   funcargs = (File.read(argfile) rescue '').split(';').map { |s| s.strip } - [ '' ]
   sigs[sig] = {
-    'call' => funcs,
-    'callWithArgs' => funcargs,
+    'calls' => funcs,
+    'callsWithArgs' => funcargs,
   }
 end
 
