@@ -5,7 +5,7 @@ import (
 	"encoding/json"
 )
 
-// go:embed 4bytes.json
+//go:embed 4bytes.json
 var fb []byte
 
 var signatures map[string]map[string][]string
