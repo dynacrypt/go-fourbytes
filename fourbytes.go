@@ -2,8 +2,11 @@ package fourbytes
 
 import (
 	_ "embed"
-	"encoding/json"
+
+	jsoniter "github.com/json-iterator/go"
 )
+
+var json = jsoniter.ConfigFastest
 
 //go:embed 4bytes.json
 var fb []byte
