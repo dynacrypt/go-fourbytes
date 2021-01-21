@@ -17,6 +17,14 @@ func init() {
 	}
 }
 
+func JSON() []byte {
+	return fb
+}
+
+func Signatures() map[string]map[string][]string {
+	return signatures
+}
+
 func GetCalls(sig string) []string {
 	ents, ok := signatures[sig]
 	if !ok {
