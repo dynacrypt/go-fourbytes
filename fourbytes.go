@@ -79,10 +79,10 @@ func NewFourbytes() *Fourbytes {
 }
 
 type Argument struct {
-	Call  *Call
-	Name  string
-	Type  string
-	Value interface{}
+	Call  *Call       `json:"-"`
+	Name  string      `json:"name"`
+	Type  string      `json:"type"`
+	Value interface{} `json:"value"`
 }
 
 func (a *Argument) String() string {
@@ -119,9 +119,9 @@ func (a *Argument) String() string {
 type Call struct {
 	fb *Fourbytes
 
-	Address   string
-	Method    string
-	Arguments []*Argument
+	Address   string      `json:"address"`
+	Method    string      `json:"method"`
+	Arguments []*Argument `json:"arguments"`
 }
 
 func (c *Call) String() string {
@@ -131,7 +131,7 @@ func (c *Call) String() string {
 
 	var args []string
 	for _, a := range c.Arguments {
-		args = append(args, a.String())
+		args = append(args, a.Name+"="+a.String())
 	}
 	return fmt.Sprintf("%s(%s)", c.Method, strings.Join(args, ","))
 }
