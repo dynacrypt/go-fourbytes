@@ -119,7 +119,7 @@ func (a *Argument) String() string {
 type Call struct {
 	fb *Fourbytes
 
-	Address   string      `json:"address"`
+	Address   string      `json:"-"`
 	Method    string      `json:"method"`
 	Arguments []*Argument `json:"arguments"`
 }
